@@ -93,9 +93,9 @@ claude
 `README.md` inside is the client brief and nothing more. **Everything needed to answer it is in
 that folder. The answer is not.**
 
-Two things are worth knowing before you start, because they are the whole point: the headline is
-computed over a population nobody audited, and at least one event does not fire when its name says
-it does. Read `src/` — the call site is the only honest event dictionary.
+One hint, because it is the habit rather than the answer: **run the skill's steps in order.** Most
+people jump to the cut that looks wrong. The two steps before it are what decide whether that cut
+means anything.
 
 ---
 

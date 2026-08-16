@@ -6,6 +6,13 @@ Most product decisions are made from a dashboard that is finished, confident and
 finished-looking artifact is one nobody re-checks — which is exactly when the denominator is wrong.
 This skill is the twenty minutes before the decision, the ones almost nobody spends.
 
+## What's here
+
+| | |
+|---|---|
+| `.claude/skills/product-hygiene/` | the skill |
+| `helply-case/` | a complete synthetic B2B SaaS company to run it against |
+
 ## Install
 
 ```bash
@@ -64,9 +71,35 @@ usually is. Negative analysis finds bugs; positive analysis finds the mechanism 
 
 A property shared by finishers is an **association, not a cause**, and the skill says so every time.
 
+## The case
+
+`helply-case/` is a fictional helpdesk product whose activation fell from 66% in February to 55%
+in July. Two people were put on growth for a quarter and it did not move.
+
+```bash
+cd helply-case
+claude
+# then:  /product-hygiene
+```
+
+| | |
+|---|---|
+| `data/ga4_events.csv` | GA4 BigQuery export, flattened |
+| `data/app_accounts.csv` | production database export |
+| `data/session_recordings.csv` | session-recording export — the only source carrying a user agent |
+| `src/` | the files from the web app that contain the `track()` calls |
+| `dashboard.html` | open it in a browser. This is what the team looks at |
+
+`README.md` inside is the client brief and nothing more. **Everything needed to answer it is in
+that folder. The answer is not.**
+
+Two things are worth knowing before you start, because they are the whole point: the headline is
+computed over a population nobody audited, and at least one event does not fire when its name says
+it does. Read `src/` — the call site is the only honest event dictionary.
+
 ---
 
-Built for the **AI Product Analyst** course. Course materials and a full synthetic case are
-published here after each session is delivered.
+Built for the **AI Product Analyst** course. Session materials are published after each session is
+delivered.
 
 *Bayram Annakov · [Onsa.ai](https://onsa.ai)*
